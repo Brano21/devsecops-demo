@@ -1,7 +1,7 @@
 # Pinned to OLD versions on purpose so SCA tools (pip-audit, Dependabot)
 # raise alerts. DO NOT use these versions in real projects.
 Flask==2.0.3
-Jinja2==3.0.3
+Jinja2==3.1.6
 Werkzeug==2.0.3
 itsdangerous==2.0.1
 MarkupSafe==2.0.1
