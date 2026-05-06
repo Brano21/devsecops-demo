@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome - DevSecOps demo</title>
+    <style>
+        body { font-family: -apple-system, system-ui, sans-serif; max-width: 600px; margin: 2em auto; padding: 0 1em; }
+        .ok { background: #efe; border-left: 4px solid #2a2; padding: 1em; }
+        .query { background: #f4f4f4; padding: 0.6em; font-family: monospace; font-size: 0.85em; word-break: break-all; }
+    </style>
+</head>
+<body>
+    <p><a href="/">← back</a></p>
+    <div class="ok">
+        ✅ Logged in as <strong>{{ username }}</strong> (role: <strong>{{ role }}</strong>)
+    </div>
+    <p>SQL that was executed:</p>
+    <div class="query">{{ query }}</div>
+</body>
+</html>

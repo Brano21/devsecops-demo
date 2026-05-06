@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Notes - DevSecOps demo</title>
+    <style>
+        body { font-family: -apple-system, system-ui, sans-serif; max-width: 720px; margin: 2em auto; padding: 0 1em; }
+        .note { border: 1px solid #ddd; padding: 0.6em 1em; margin: 0.5em 0; border-radius: 3px; }
+        .owner { color: #888; font-size: 0.85em; }
+    </style>
+</head>
+<body>
+    <p><a href="/">← back</a></p>
+    <h1>All notes</h1>
+    {% for n in notes %}
+        <div class="note">
+            <div class="owner">by {{ n['owner'] }}</div>
+            <strong>{{ n['title'] }}</strong><br>
+            {{ n['body'] }}
+        </div>
+    {% endfor %}
+</body>
+</html>

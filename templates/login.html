@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - DevSecOps demo</title>
+    <style>
+        body { font-family: -apple-system, system-ui, sans-serif; max-width: 500px; margin: 2em auto; padding: 0 1em; }
+        input { display: block; margin: 0.4em 0; padding: 0.5em; width: 100%; box-sizing: border-box; }
+        button { padding: 0.6em 1.2em; background: #FFD300; border: 0; cursor: pointer; }
+        .error { color: #c00; font-weight: bold; }
+        .query { background: #f4f4f4; padding: 0.6em; font-family: monospace; font-size: 0.85em; word-break: break-all; }
+        a { color: #555; }
+    </style>
+</head>
+<body>
+    <p><a href="/">← back</a></p>
+    <h1>Login</h1>
+    <form method="POST">
+        <label>Username <input type="text" name="username" autofocus></label>
+        <label>Password <input type="password" name="password"></label>
+        <button type="submit">Log in</button>
+    </form>
+    {% if error %}<p class="error">{{ error }}</p>{% endif %}
+    {% if query %}
+        <p>Executed SQL (yes – we are showing it on purpose so you see the bug):</p>
+        <div class="query">{{ query }}</div>
+    {% endif %}
+</body>
+</html>

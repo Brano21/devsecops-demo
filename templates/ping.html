@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ping - DevSecOps demo</title>
+    <style>
+        body { font-family: -apple-system, system-ui, sans-serif; max-width: 720px; margin: 2em auto; padding: 0 1em; }
+        input[type=text] { padding: 0.5em; width: 60%; }
+        button { padding: 0.5em 1em; background: #FFD300; border: 0; cursor: pointer; }
+        pre { background: #111; color: #0f0; padding: 1em; overflow: auto; }
+    </style>
+</head>
+<body>
+    <p><a href="/">← back</a></p>
+    <h1>Ping a host</h1>
+    <form method="POST">
+        <input type="text" name="host" value="{{ host }}" placeholder="e.g. 127.0.0.1">
+        <button type="submit">Ping</button>
+    </form>
+    {% if output %}
+        <h2>Output</h2>
+        <pre>{{ output }}</pre>
+    {% endif %}
+</body>
+</html>

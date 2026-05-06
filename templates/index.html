@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DevSecOps demo</title>
+    <style>
+        body { font-family: -apple-system, system-ui, sans-serif; max-width: 720px; margin: 2em auto; padding: 0 1em; }
+        h1 { color: #333; }
+        nav a { display: inline-block; margin-right: 1em; padding: 0.4em 0.8em; background: #FFD300; color: #000; text-decoration: none; border-radius: 3px; }
+        .warn { background: #fee; border-left: 4px solid #c00; padding: 1em; margin: 1em 0; }
+    </style>
+</head>
+<body>
+    <h1>DevSecOps demo app</h1>
+    <div class="warn">
+        ⚠️ This application contains <strong>intentional vulnerabilities</strong>
+        for educational purposes. Never expose it to the internet.
+    </div>
+    <nav>
+        <a href="/login">Login (try SQLi)</a>
+        <a href="/search">Search (try XSS)</a>
+        <a href="/ping">Ping (try cmd injection)</a>
+        <a href="/notes">Notes</a>
+    </nav>
+    <h2>Try these payloads</h2>
+    <ul>
+        <li><strong>SQLi (login):</strong> username = <code>admin' --</code> password = <code>anything</code></li>
+        <li><strong>XSS (search):</strong> <code>/search?q=&lt;script&gt;alert(1)&lt;/script&gt;</code></li>
+        <li><strong>Command injection (ping):</strong> host = <code>127.0.0.1; whoami</code></li>
+    </ul>
+    <p><small>Test users: <code>alice</code>/<code>alicepass</code>, <code>bob</code>/<code>bobpass</code></small></p>
+</body>
+</html>

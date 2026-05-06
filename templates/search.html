@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search - DevSecOps demo</title>
+    <style>
+        body { font-family: -apple-system, system-ui, sans-serif; max-width: 720px; margin: 2em auto; padding: 0 1em; }
+        input[type=text] { padding: 0.5em; width: 60%; }
+        button { padding: 0.5em 1em; background: #FFD300; border: 0; cursor: pointer; }
+        .note { border: 1px solid #ddd; padding: 0.6em 1em; margin: 0.5em 0; border-radius: 3px; }
+    </style>
+</head>
+<body>
+    <p><a href="/">← back</a></p>
+    <h1>Search notes</h1>
+    <form method="GET">
+        <input type="text" name="q" value="{{ q }}" placeholder="search...">
+        <button type="submit">Search</button>
+    </form>
+
+    {# !!! VULNERABLE: |safe disables auto-escaping, allowing XSS !!! #}
+    {% if q %}<p>Showing results for: {{ q | safe }}</p>{% endif %}
+
+    {% if notes %}
+        <h2>Results</h2>
+        {% for n in notes %}
+            <div class="note">
+                <strong>{{ n['title'] }}</strong><br>
+                {{ n['body'] }}
+            </div>
+        {% endfor %}
+    {% elif q %}
+        <p><em>No notes match.</em></p>
+    {% endif %}
+</body>
+</html>
